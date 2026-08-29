@@ -1,0 +1,31 @@
+[core]
+	excludesfile = /Users/oronb/.gitignore_global
+	editor = nvim
+	untrackedCache = true
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[user]
+	name = Oron Ben Zvi
+	email = oronbz@gmail.com
+[commit]
+	template = /Users/oronb/.stCommitMsg
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[interactive]
+	diffFilter = delta --color-only
+[delta]
+	navigate = false
+	dark = false
+[merge]
+	conflictStyle = zdiff3
+[advice]
+	forceDeleteBranch = false
+[pull]
+	rebase = true

@@ -1,0 +1,143 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "cli_default_open_behavior": "new_window",
+  "outline_panel": {
+    "dock": "left"
+  },
+  "collaboration_panel": {
+    "dock": "left"
+  },
+  "git_panel": {
+    "dock": "left"
+  },
+  "agent_servers": {
+    "claude-acp": {
+      "type": "registry"
+    }
+  },
+  "soft_wrap": "editor_width",
+  "which_key": {
+    "delay_ms": 500,
+    "enabled": true,
+  },
+  "git": {
+    "branch_picker": {
+      "show_author_name": true,
+    },
+    "inline_blame": {
+      "show_commit_summary": true,
+    },
+  },
+  "status_bar": {
+    "cursor_position_button": true,
+    "active_language_button": true,
+  },
+  "tab_bar": {
+    "show_pinned_tabs_in_separate_row": false,
+    "show_tab_bar_buttons": true,
+    "show_nav_history_buttons": true,
+    "show": true,
+  },
+  "tabs": {
+    "show_diagnostics": "all",
+    "show_close_button": "hover",
+    "close_position": "left",
+    "file_icons": true,
+    "git_status": true,
+  },
+  "title_bar": {
+    "show_branch_status_icon": true,
+    "show_onboarding_banner": true,
+    "show_project_items": true,
+    "show_branch_name": true,
+    "show_menus": false,
+    "show_sign_in": true,
+    "show_user_picture": true,
+  },
+  "terminal": {
+    "font_family": "JetBrainsMono Nerd Font",
+    "option_as_meta": true,
+  },
+  "vim": {
+    "toggle_relative_line_numbers": false,
+  },
+  "project_panel": {
+    "bold_folder_labels": false,
+    "hide_hidden": false,
+    "indent_size": 12,
+    "folder_icons": false,
+    "entry_spacing": "comfortable",
+    "hide_root": false,
+    "git_status": true,
+    "file_icons": true,
+    "dock": "left",
+    "button": true,
+    "hide_gitignore": false,
+  },
+  "buffer_font_family": ".ZedMono",
+  "agent": {
+    "sidebar_side": "right",
+    "dock": "right",
+    "default_profile": "write",
+    "show_turn_stats": false,
+    "default_model": {
+      "provider": "copilot_chat",
+      "model": "claude-opus-4.6",
+      "enable_thinking": false,
+    },
+    "favorite_models": [],
+    "model_parameters": [],
+  },
+  "edit_predictions": {
+    "provider": "copilot",
+  },
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false,
+  },
+  "session": {
+    "trust_all_worktrees": true,
+  },
+  "toolbar": {
+    "code_actions": true,
+    "breadcrumbs": true,
+  },
+  "vim_mode": false,
+  "base_keymap": "VSCode",
+  "ui_font_size": 16,
+  "ui_font_weight": 450,
+  "ui_font_family": ".ZedSans",
+  "buffer_font_size": 15,
+  "theme": {
+    "mode": "system",
+    "light": "Catppuccin Iced Latte (Blur)",
+    "dark": "One Dark",
+  },
+  "icon_theme": {
+    "mode": "system",
+    "light": "Base Charmed Icons",
+    "dark": "Soft Charmed Icons",
+  },
+
+  "file_types": {
+    "Ghostty": ["**/ghostty/config", "**/com.mitchellh.ghostty/config"],
+  },
+  "lsp": {
+    "vscode-css-language-server": {
+      "settings": {
+        "css": {
+          "lint": {
+            "unknownAtRules": "ignore",
+          },
+        },
+      },
+    },
+  },
+}
