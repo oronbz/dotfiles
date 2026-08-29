@@ -11,7 +11,7 @@ macOS terminal setup. Managed with [GNU Stow](https://www.gnu.org/software/stow/
 | prompt | [starship](https://starship.rs) (`pastel-powerline` base, trimmed) |
 | plugins | zsh-autosuggestions · zsh-syntax-highlighting · zsh-completions · zsh-history-substring-search (brew) |
 | tools | fzf · zoxide · eza · bat · lazygit · btop · k9s · yazi |
-| editor | nvim ([LazyVim config](https://github.com/oronbz/lazy-vim-config), separate repo) · zed |
+| editor | nvim — LazyVim (default, `nvim`/`lazy`), NvChad (`chad`), AstroNvim (`astro`), ios-dev-starter (`ncode`), plus two hand-rolled (`nvim.oron*`) · zed |
 
 ## Install
 
@@ -30,6 +30,7 @@ starship/   .config/starship.toml
 ghostty/    .config/ghostty/config
 herdr/      .config/herdr/config.toml
 git/        .gitconfig .config/git/ignore
+nvim/       .config/{LazyVim,NvChad,AstroNvim,ios-dev-starter-nvim,nvim.oron,nvim.oron-2}
 lazygit/ btop/ k9s/ fastfetch/ gh-dash/ zed/ opencode/
 Brewfile    brew bundle dump (formulae, casks, taps)
 ```
