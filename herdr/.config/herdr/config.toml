@@ -162,8 +162,7 @@ navigate_workspace_down = ["down","j"]
 # headless_rows = 40
 
 [worktrees]
-# directory = "~/.herdr/worktrees"
-# directory = "~/.herdr/worktrees"  # sidebar "New worktree" only; nested checkouts via `wt` shell fn
+directory = "~/.herdr/worktrees"
 
 [ui]
 # Sidebar width (auto-scaled based on workspace names, this sets the default)
