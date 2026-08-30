@@ -7,6 +7,8 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "agent_ui_font_family": "JetBrainsMono Nerd Font",
+  "markdown_preview_font_family": "JetBrainsMono Nerd Font",
   "cli_default_open_behavior": "new_window",
   "outline_panel": {
     "dock": "left"
@@ -116,9 +118,9 @@
   "ui_font_family": ".ZedSans",
   "buffer_font_size": 15,
   "theme": {
-    "mode": "system",
-    "light": "Catppuccin Iced Latte (Blur)",
-    "dark": "One Dark",
+    "mode": "dark",
+    "light": "One Dark",
+    "dark": "Catppuccin Mocha (Blur)"
   },
   "icon_theme": {
     "mode": "system",

@@ -1,11 +1,11 @@
 #font-family = "Fira Code"
 font-family = "JetBrainsMono NF"
-theme = Dracula
+theme = "Catppuccin Mocha"
 font-size = 14
 font-style = Bold
 background-opacity = 0.80
 background-blur-radius = 40
-background = 000000
+#background = 000000
 #cursor-style = "block"
 #shell-integration-features = no-cursor
 #macos-titlebar-style = transparent

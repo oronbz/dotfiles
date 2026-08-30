@@ -9,5 +9,20 @@ return {
                 floats = "transparent",
             },
         },
-    }
+    },
+    {
+        "catppuccin/nvim",
+        name = "catppuccin",
+        lazy = true,
+        opts = {
+            flavour = "mocha",
+            transparent_background = true,
+        },
+    },
+    {
+        "LazyVim/LazyVim",
+        opts = {
+            colorscheme = "catppuccin",
+        },
+    },
 }
