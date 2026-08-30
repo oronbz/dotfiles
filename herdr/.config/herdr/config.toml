@@ -382,3 +382,9 @@ command = "/Users/oronb/.config/herdr/agent-picker.sh"
 description = "agent picker"
 width = "70%"
 height = "50%"
+
+[[keys.command]]
+key = "cmd+k"
+type = "shell"
+command = "/Users/oronb/.config/herdr/clear-pane.sh"
+description = "clear pane + scrollback"

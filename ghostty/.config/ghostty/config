@@ -28,9 +28,7 @@ keybind = super+ctrl+t=prompt_surface_title
 # Prompt fixes: send the control code instead of Ghostty's own action, so it
 # reaches the pane rather than acting on the outer Ghostty surface.
 #   ctrl+c  SIGINT
-#   cmd+k   Ctrl-L, clears screen only (scrollback survives)
 keybind = ctrl+c=text:\x03
-keybind = cmd+k=text:\x0c
 
 # ---------------------------------------------------------------------------
 # Pass through to herdr (~/.config/herdr/config.toml [keys])
@@ -45,12 +43,14 @@ keybind = cmd+k=text:\x0c
 #   cmd+shift+d    split_horizontal
 #   cmd+[ / ]      cycle_pane_previous / cycle_pane_next
 #   cmd+shift+[ ]  previous_tab / next_tab
+#   cmd+k          keys.command clear-pane.sh (screen + scrollback, any pane)
 #   cmd+1..9       switch_workspace
 #
 # Not listed here, so no Ghostty binding is needed: alt+1..9 (switch_tab) and
 # ctrl+b (prefix) have no Ghostty default to displace.
 # ---------------------------------------------------------------------------
 keybind = cmd+t=unbind
+keybind = cmd+k=unbind
 keybind = cmd+w=unbind
 keybind = cmd+d=unbind
 keybind = cmd+shift+d=unbind
