@@ -26,13 +26,3 @@ path=(
   "$ANDROID_HOME/platform-tools"
   "$GOPATH/bin"
 )
-
-export BUNDLE_SSL_CA_CERT=~/corp-ca-bundle.pem
-export GIT_SSL_CAPATH=~/corp-ca-bundle.pem
-export REQUESTS_CA_BUNDLE=~/corp-ca-bundle.pem
-export AWS_CA_BUNDLE=~/corp-ca-bundle.pem
-export SSL_CERT_FILE=~/corp-ca-bundle.pem
-export NODE_EXTRA_CA_CERTS=~/corp-ca-bundle.pem
-export CURL_CA_BUNDLE=~/corp-ca-bundle.pem
-
-export APP_STORE_CONNECT_API_KEY_PATH="$HOME/REDACTED"

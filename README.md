@@ -40,7 +40,7 @@ Brewfile    brew bundle dump (taps, formulae, casks)
 - Edit files in `~/.dotfiles` directly — they're symlinked, changes are live.
 - New config: `mkdir -p ~/.dotfiles/<pkg>/.config/<pkg>`, move the file in, `cd ~/.dotfiles && stow --no-folding <pkg>`.
 - After `brew install`: `brew bundle dump --force --file=~/.dotfiles/Brewfile`.
-- Secrets live in `~/.config/zsh/secrets.zsh`, gitignored, never in this repo.
+- Secrets live in `~/.config/zsh/secrets.zsh`, work-machine env/functions in `~/.config/zsh/work.zsh`; both gitignored, never in this repo.
 
 ## zsh notes
 

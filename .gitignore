@@ -1,4 +1,5 @@
 .DS_Store
 **/secrets.zsh
+**/work.zsh
 *.bak
 *.log

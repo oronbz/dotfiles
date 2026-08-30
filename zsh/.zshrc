@@ -1,6 +1,6 @@
 ZDOTCONF="$HOME/.config/zsh"
 
-for f in path secrets aliases git functions; do
+for f in path secrets work aliases git functions; do
   [[ -r "$ZDOTCONF/$f.zsh" ]] && source "$ZDOTCONF/$f.zsh"
 done
 
