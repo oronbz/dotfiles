@@ -31,7 +31,7 @@ ghostty/    .config/ghostty/config
 herdr/      .config/herdr/config.toml
 git/        .gitconfig .config/git/ignore
 nvim/       .config/{LazyVim,NvChad,AstroNvim}
-lazygit/ btop/ k9s/ fastfetch/ gh-dash/ zed/ opencode/
+lazygit/ zed/
 Brewfile    brew bundle dump (taps, formulae, casks)
 ```
 
