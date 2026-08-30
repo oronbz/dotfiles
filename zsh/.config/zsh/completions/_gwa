@@ -1,4 +1,10 @@
 #compdef gwa
-local -a branches
-branches=(${(f)"$(git for-each-ref --format='%(refname:short)' refs/heads refs/remotes 2>/dev/null | sed 's|^origin/||' | sort -u)"})
-_describe -t branches 'branch' branches
+_gwa_branches() {
+  local -a branches
+  branches=(${(f)"$(git for-each-ref --format='%(refname:short)' refs/heads refs/remotes 2>/dev/null | sed 's|^origin/||' | sort -u)"})
+  _describe -t branches 'branch' branches
+}
+_arguments \
+  '-b[branch to check out; positional becomes the worktree dir slug]:branch:_gwa_branches' \
+  '1:branch or dir slug:_gwa_branches' \
+  '2:base branch:_gwa_branches'

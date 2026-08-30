@@ -47,15 +47,18 @@ stale() {
 
 
 gwa() {
-  [ -z "$1" ] && { echo "usage: gwa <branch> [base=master]"; return 1; }
+  local -a opt_b; zparseopts -D -E b:=opt_b
+  [ -z "$1" ] && { echo "usage: gwa [-b <branch>] <branch|slug> [base=master]"; return 1; }
+  local branch="${opt_b[2]:-$1}" slug="${1##*/}"
   local root; root=$(git rev-parse --path-format=absolute --git-common-dir) || return 1; root=${root%/.git}
-  local dir="$root/.worktrees/${1##*/}"
-  if git show-ref --verify --quiet "refs/heads/$1"; then
-    git worktree add "$dir" "$1"
+  local dir="$root/.worktrees/$slug"
+  if git show-ref --verify --quiet "refs/heads/$branch"; then
+    git worktree add "$dir" "$branch"
   else
-    git worktree add -b "$1" "$dir" "${2:-master}"
+    git worktree add -b "$branch" "$dir" "${2:-master}"
   fi || return 1
   echo "$dir"
+  command -v zoxide >/dev/null && zoxide add "$dir"
   if [ "${HERDR_ENV:-}" = 1 ]; then
     herdr worktree open --cwd "$root" --path "$dir" --focus >/dev/null 2>&1
   else
@@ -77,5 +80,7 @@ gwr() {
     herdr workspace list 2>/dev/null | jq -r --arg p "$dir" '.result.workspaces[] | select(.worktree.checkout_path==$p) | .workspace_id' \
       | while read -r ws; do herdr workspace close "$ws" >/dev/null 2>&1; done
   fi
-  git worktree remove "$@" "$dir" && echo "removed $dir"
+  git worktree remove "$@" "$dir" || return 1
+  command -v zoxide >/dev/null && zoxide remove "$dir" 2>/dev/null
+  echo "removed $dir"
 }
