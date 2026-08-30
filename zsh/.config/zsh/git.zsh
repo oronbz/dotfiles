@@ -46,3 +46,16 @@ stale() {
   git fetch -p
   git branch -vv | grep ': gone]' | awk '{print $1}'
 }
+
+wt() {
+  [ -z "$1" ] && { echo "usage: wt <branch> [base]"; return 1; }
+  local root; root=$(git rev-parse --show-toplevel) || return 1
+  local path="$root/.worktrees/${1##*/}"
+  if git show-ref --verify --quiet "refs/heads/$1"; then
+    git worktree add "$path" "$1"
+  else
+    git worktree add -b "$1" "$path" "${2:-master}"
+  fi || return 1
+  [ "${HERDR_ENV:-}" = 1 ] && herdr worktree open --cwd "$root" --path "$path" --no-focus >/dev/null 2>&1
+  echo "$path"
+}

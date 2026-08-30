@@ -163,7 +163,7 @@ navigate_workspace_down = ["down","j"]
 
 [worktrees]
 # directory = "~/.herdr/worktrees"
-directory = "../"
+# directory = "~/.herdr/worktrees"  # sidebar "New worktree" only; nested checkouts via `wt` shell fn
 
 [ui]
 # Sidebar width (auto-scaled based on workspace names, this sets the default)

@@ -56,7 +56,7 @@ format = '[ $user]($style)'
 [directory]
 style = "bg:peach fg:crust"
 format = "[ $path ]($style)"
-truncation_length = 2
+truncation_length = 1
 truncation_symbol = ""
 truncate_to_repo = false
 
