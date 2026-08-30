@@ -18,11 +18,6 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
-[interactive]
-	diffFilter = delta --color-only
-[delta]
-	navigate = false
-	dark = false
 [merge]
 	conflictStyle = zdiff3
 [advice]
