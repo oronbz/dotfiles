@@ -68,11 +68,14 @@ truncate_to_repo = false
 "Developer" = "󰲋 "
 
 [git_branch]
+disabled = false
 symbol = ""
 style = "bg:yellow"
 format = '[[ $symbol $branch ](fg:crust bg:yellow)]($style)'
 
 [git_status]
+disabled = false
+use_git_executable = true
 style = "bg:yellow"
 format = '[[($all_status$ahead_behind )](fg:crust bg:yellow)]($style)'
 
