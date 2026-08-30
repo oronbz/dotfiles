@@ -1,0 +1,5 @@
+#compdef gwr
+local -a wts
+wts=(${(f)"$(git worktree list --porcelain 2>/dev/null | awk '/^worktree /{print $2}' | tail -n +2 | xargs -n1 basename 2>/dev/null)"})
+_describe -t worktrees 'worktree' wts
+_arguments '--force[remove even if dirty]'
