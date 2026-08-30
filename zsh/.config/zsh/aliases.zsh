@@ -1,5 +1,6 @@
 alias zshc="nvim ~/.zshrc"
 alias szh="source ~/.zshrc"
+alias d="dirs -v"
 
 alias h="herdr"
 alias co="copilot"

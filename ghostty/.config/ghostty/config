@@ -1,6 +1,7 @@
 #font-family = "Fira Code"
 font-family = "JetBrainsMono NF"
-theme = "Catppuccin Mocha"
+theme = light:Catppuccin Latte,dark:Catppuccin Mocha
+cursor-style = bar
 font-size = 14
 font-style = Bold
 background-opacity = 0.80

@@ -9,6 +9,8 @@ tap "peonping/tap", "https://github.com/PeonPing/homebrew-tap"
 tap "pointfreeco/tap"
 tap "reyamira/tap", "https://github.com/reyamira/homebrew-tap.git"
 tap "steipete/tap"
+# Improved shell history for zsh, bash, fish and nushell
+brew "atuin"
 # Interpreted, interactive, object-oriented programming language
 brew "python@3.14"
 # Official Amazon AWS command-line interface
@@ -59,6 +61,8 @@ brew "lazygit"
 brew "lolcat"
 # Mac App Store command-line interface
 brew "mas"
+# Polyglot runtime manager (asdf rust clone)
+brew "mise"
 # Fast TUI and CLI for browsing AI models, benchmarks, and coding agents
 brew "models"
 # Feature-rich command-line audio/video downloader
@@ -78,12 +82,15 @@ brew "poppler"
 # Monitor data's progress through a pipe
 brew "pv"
 # Ruby version manager
+brew "rbenv"
 # Search tool like grep and The Silver Searcher
 brew "ripgrep"
 # Powerful, clean, object-oriented scripting language
 brew "ruby", link: false
 # Generate ASCII art with terminal, shell, and OS info
 brew "screenfetch"
+# Organize software neatly under a single directory tree (e.g. /usr/local)
+brew "stow"
 # Plugin and runtime library for using protobuf with Swift
 brew "swift-protobuf"
 # Formatting tool for reformatting Swift code
