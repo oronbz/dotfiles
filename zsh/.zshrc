@@ -46,7 +46,7 @@ cached_init() {
 }
 cached_init fzf fzf --zsh
 cached_init zoxide zoxide init zsh
-cached_init mise mise activate zsh
+cached_init mise mise activate zsh --shims
 cached_init atuin atuin init zsh --disable-up-arrow
 
 [[ -s "$HOME/.bun/_bun" ]] && source "$HOME/.bun/_bun"
