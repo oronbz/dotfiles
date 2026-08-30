@@ -43,14 +43,13 @@ keybind = ctrl+c=text:\x03
 #   cmd+shift+d    split_horizontal
 #   cmd+[ / ]      cycle_pane_previous / cycle_pane_next
 #   cmd+shift+[ ]  previous_tab / next_tab
-#   cmd+k          keys.command clear-pane.sh (screen + scrollback, any pane)
 #   cmd+1..9       switch_workspace
 #
 # Not listed here, so no Ghostty binding is needed: alt+1..9 (switch_tab) and
-# ctrl+b (prefix) have no Ghostty default to displace.
+# ctrl+b (prefix) have no Ghostty default to displace; cmd+k (clear-pane.sh via
+# keys.command) falls through because clear_screen is a no-op on the alt screen.
 # ---------------------------------------------------------------------------
 keybind = cmd+t=unbind
-keybind = cmd+k=unbind
 keybind = cmd+w=unbind
 keybind = cmd+d=unbind
 keybind = cmd+shift+d=unbind
