@@ -48,7 +48,7 @@ stale() {
 
 gwa() {
   [ -z "$1" ] && { echo "usage: gwa <branch> [base=master]"; return 1; }
-  local root; root=$(git rev-parse --show-toplevel) || return 1
+  local root; root=$(git rev-parse --path-format=absolute --git-common-dir) || return 1; root=${root%/.git}
   local dir="$root/.worktrees/${1##*/}"
   if git show-ref --verify --quiet "refs/heads/$1"; then
     git worktree add "$dir" "$1"
@@ -61,7 +61,7 @@ gwa() {
 
 gwr() {
   [ -z "$1" ] && { echo "usage: gwr <slug|branch|path> [--force]"; return 1; }
-  local root; root=$(git rev-parse --show-toplevel) || return 1
+  local root; root=$(git rev-parse --path-format=absolute --git-common-dir) || return 1; root=${root%/.git}
   local target="$1"; shift
   local dir
   if [ -d "$target" ]; then dir=$(cd "$target" && pwd)
