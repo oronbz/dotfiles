@@ -155,20 +155,6 @@ cask "ngrok"
 cask "opencode-desktop"
 cask "pinky"
 cask "sitter"
-mas "Buildio", id: 1598605988
-mas "DaisyDisk", id: 411643860
-mas "DevCleaner", id: 1388020431
-mas "Developer", id: 640199958
-mas "iMovie", id: 408981434
-mas "Kindle", id: 302584613
-mas "Numbers", id: 361304891
-mas "Okta Verify", id: 490179405
-mas "Pixelmator Pro", id: 1289583905
-mas "PowerWash Simulator", id: 6477445344
-mas "pull-bar-pro", id: 6462591649
-mas "Telegram", id: 747648890
-mas "WhatsApp", id: 310633997
-mas "Xcode", id: 497799835
 go "github.com/oronbz/bitter"
 go "github.com/go-delve/delve/cmd/dlv"
 go "github.com/353solutions/droopy/cmd/droopy"
