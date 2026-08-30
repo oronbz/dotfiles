@@ -16,13 +16,17 @@ return {
         lazy = true,
         opts = {
             flavour = "mocha",
+            background = {
+                light = "mocha",
+                dark = "mocha",
+            },
             transparent_background = true,
         },
     },
     {
         "LazyVim/LazyVim",
         opts = {
-            colorscheme = "catppuccin",
+            colorscheme = "catppuccin-mocha",
         },
     },
 }
