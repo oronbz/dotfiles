@@ -22,8 +22,6 @@ alias gpsup='git push --set-upstream origin $(git_current_branch)'
 alias gfom="git fetch origin master:master"
 alias gcom="gco master"
 alias gwl="git worktree list"
-alias gwa="git worktree add"
-alias gwr="git worktree remove"
 alias pr="gh pr create --fill"
 alias prd="gh pr create --fill --draft"
 alias gg="git-good-game"
@@ -47,15 +45,33 @@ stale() {
   git branch -vv | grep ': gone]' | awk '{print $1}'
 }
 
-wt() {
-  [ -z "$1" ] && { echo "usage: wt <branch> [base]"; return 1; }
+
+gwa() {
+  [ -z "$1" ] && { echo "usage: gwa <branch> [base=master]"; return 1; }
   local root; root=$(git rev-parse --show-toplevel) || return 1
-  local path="$root/.worktrees/${1##*/}"
+  local dir="$root/.worktrees/${1##*/}"
   if git show-ref --verify --quiet "refs/heads/$1"; then
-    git worktree add "$path" "$1"
+    git worktree add "$dir" "$1"
   else
-    git worktree add -b "$1" "$path" "${2:-master}"
+    git worktree add -b "$1" "$dir" "${2:-master}"
   fi || return 1
-  [ "${HERDR_ENV:-}" = 1 ] && herdr worktree open --cwd "$root" --path "$path" --no-focus >/dev/null 2>&1
-  echo "$path"
+  [ "${HERDR_ENV:-}" = 1 ] && herdr worktree open --cwd "$root" --path "$dir" --no-focus >/dev/null 2>&1
+  echo "$dir"
+}
+
+gwr() {
+  [ -z "$1" ] && { echo "usage: gwr <slug|branch|path> [--force]"; return 1; }
+  local root; root=$(git rev-parse --show-toplevel) || return 1
+  local target="$1"; shift
+  local dir
+  if [ -d "$target" ]; then dir=$(cd "$target" && pwd)
+  elif [ -d "$root/.worktrees/$target" ]; then dir="$root/.worktrees/$target"
+  else dir=$(git worktree list --porcelain | awk -v b="refs/heads/$target" '/^worktree /{w=$2} $1=="branch" && $2==b {print w}')
+  fi
+  [ -z "$dir" ] && { echo "no worktree for '$target'"; return 1; }
+  if [ "${HERDR_ENV:-}" = 1 ]; then
+    herdr workspace list 2>/dev/null | jq -r --arg p "$dir" '.result.workspaces[] | select(.worktree.checkout_path==$p) | .workspace_id' \
+      | while read -r ws; do herdr workspace close "$ws" >/dev/null 2>&1; done
+  fi
+  git worktree remove "$@" "$dir" && echo "removed $dir"
 }
