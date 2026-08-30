@@ -32,14 +32,14 @@ herdr/      .config/herdr/config.toml
 git/        .gitconfig .config/git/ignore
 nvim/       .config/{LazyVim,NvChad,AstroNvim}
 lazygit/ btop/ k9s/ fastfetch/ gh-dash/ zed/ opencode/
-Brewfile    brew bundle dump (taps, formulae, casks, go)
+Brewfile    brew bundle dump (taps, formulae, casks)
 ```
 
 ## Day to day
 
 - Edit files in `~/.dotfiles` directly — they're symlinked, changes are live.
 - New config: `mkdir -p ~/.dotfiles/<pkg>/.config/<pkg>`, move the file in, `cd ~/.dotfiles && stow --no-folding <pkg>`.
-- After `brew install`: `brew bundle dump --force --file=~/.dotfiles/Brewfile`. App Store apps excluded (`HOMEBREW_BUNDLE_DUMP_NO_MAS=1` in `path.zsh`).
+- After `brew install`: `brew bundle dump --force --file=~/.dotfiles/Brewfile`.
 - Secrets live in `~/.config/zsh/secrets.zsh`, gitignored, never in this repo.
 
 ## zsh notes
