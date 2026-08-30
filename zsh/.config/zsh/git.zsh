@@ -55,8 +55,12 @@ gwa() {
   else
     git worktree add -b "$1" "$dir" "${2:-master}"
   fi || return 1
-  [ "${HERDR_ENV:-}" = 1 ] && herdr worktree open --cwd "$root" --path "$dir" --no-focus >/dev/null 2>&1
   echo "$dir"
+  if [ "${HERDR_ENV:-}" = 1 ]; then
+    herdr worktree open --cwd "$root" --path "$dir" --focus >/dev/null 2>&1
+  else
+    cd "$dir"
+  fi
 }
 
 gwr() {
