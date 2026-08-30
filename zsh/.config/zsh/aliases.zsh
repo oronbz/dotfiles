@@ -16,7 +16,6 @@ alias nvim="lazy"
 alias chad="NVIM_APPNAME=NvChad nvim"
 alias lazy="NVIM_APPNAME=LazyVim nvim"
 alias astro="NVIM_APPNAME=AstroNvim nvim"
-alias ncode="NVIM_APPNAME=ios-dev-starter-nvim nvim"
 
 alias ls="eza --icons -a --git"
 alias lg="lazygit"
