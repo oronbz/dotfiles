@@ -4,6 +4,14 @@ pi() { bundle exec pod install }
 godev() { cd "$HOME/go/src/github.com/oronbz" }
 cpreviews() { xcrun simctl --set previews delete all }
 swiftpm() { rm -rf ./Rider/.swiftpm }
+fixschemes() {
+  local f suppressed
+  find . \( -path "*/DerivedData/*" -o -path "*/Build/*" \) -prune -o -name xcschememanagement.plist -print | while read -r f; do
+    suppressed=$(plutil -extract SuppressBuildableAutocreation raw "$f" 2>/dev/null) || continue
+    plutil -remove SuppressBuildableAutocreation "$f" && echo "unsuppressed in $f: ${suppressed//$'\n'/, }"
+  done
+  echo "done — restart Xcode to regenerate schemes"
+}
 gim() { gemini }
 ghc() { zed ~/Library/Application\ Support/com.mitchellh.ghostty/config }
 code() { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* }
