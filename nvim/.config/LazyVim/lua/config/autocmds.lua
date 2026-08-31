@@ -26,3 +26,21 @@ vim.api.nvim_create_autocmd("User", {
     end
   end,
 })
+
+vim.api.nvim_create_autocmd("BufReadPost", {
+  group = vim.api.nvim_create_augroup("resolve_symlinks", { clear = true }),
+  callback = function(args)
+    local file = vim.api.nvim_buf_get_name(args.buf)
+    local real = vim.uv.fs_realpath(file)
+    if real and real ~= file then
+      vim.schedule(function()
+        if vim.api.nvim_buf_is_valid(args.buf) and vim.api.nvim_buf_get_name(args.buf) == file then
+          vim.api.nvim_buf_set_name(args.buf, real)
+          vim.api.nvim_buf_call(args.buf, function()
+            vim.cmd("silent! edit!")
+          end)
+        end
+      end)
+    end
+  end,
+})
