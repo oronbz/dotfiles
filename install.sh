@@ -14,4 +14,5 @@ for pkg in */; do
   stow --no-folding --restow --target="$HOME" "${pkg%/}"
 done
 rm -f ~/.zcompdump
+./herdr-plugins.sh
 echo "done — open a new shell"
