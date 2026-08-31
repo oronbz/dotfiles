@@ -7,4 +7,5 @@ vim.keymap.set("n", "<leader>ft", function() Snacks.terminal(nil, { win = { posi
 vim.keymap.set({"n","t"}, "<c-/>",function() Snacks.terminal(nil, { win = { position = "right" }, cwd = LazyVim.root() }) end, { desc = "Terminal (Root Dir)" })
 vim.keymap.set({"n","t"}, "<c-_>",function() Snacks.terminal(nil, { win = { position = "right" }, cwd = LazyVim.root() }) end, { desc = "which_key_ignore" })
 vim.keymap.set("n", "<leader>h", Snacks.dashboard.open, { desc = "Open Dashboard" })
+vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float, { desc = "Line Diagnostics" })
 

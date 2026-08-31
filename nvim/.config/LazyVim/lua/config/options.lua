@@ -27,7 +27,6 @@ vim.api.nvim_create_autocmd("VimEnter", {
 })
 
 vim.g.autoformat = false
-vim.o.autoread = true
 
 -- refresh files if changed outside
 vim.fn.timer_start(2000, function()
