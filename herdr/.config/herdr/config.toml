@@ -394,17 +394,17 @@ description = "clear pane + scrollback"
 # Plannotator
 
 # Terminal annotations
-[[keys.command]]
-key = "prefix+a"
-type = "plugin_action"
-command = "annotate.capture"
-description = "annotate text"
-
-[[keys.command]]
-key = "prefix+shift+a"
-type = "plugin_action"
-command = "annotate.copy-context"
-description = "copy annotations as context"
+# [[keys.command]]
+# key = "prefix+o"
+# type = "plugin_action"
+# command = "annotate.capture"
+# description = "annotate text"
+#
+# [[keys.command]]
+# key = "prefix+shift+o"
+# type = "plugin_action"
+# command = "annotate.copy-context"
+# description = "copy annotations as context"
 
 [[keys.command]]
 key = "prefix+m"
@@ -414,13 +414,13 @@ description = "manage annotations"
 
 # Document review (plannotator-tui)
 [[keys.command]]
-key = "prefix+o"
+key = "prefix+shift+a"
 type = "plugin_action"
 command = "annotate.open"
 description = "review documents in this folder"
 
 [[keys.command]]
-key = "prefix+shift+o"
+key = "prefix+a"
 type = "plugin_action"
 command = "annotate.last"
 description = "review the agent's last reply"
