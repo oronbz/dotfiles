@@ -1,5 +1,8 @@
 #font-family = "Fira Code"
 font-family = "JetBrainsMono NF"
+# JetBrains NF lacks U+25D0 (◐, herdr working indicator); without this it
+# falls back to Menlo at a mismatched size.
+font-codepoint-map = U+25D0=Fira Code
 theme = "Catppuccin Mocha"
 cursor-style = bar
 font-size = 14
