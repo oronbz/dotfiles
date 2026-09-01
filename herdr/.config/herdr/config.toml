@@ -295,6 +295,7 @@ prompt_new_workspace_name = true
 
 # Background notification popup delivery
 agent_panel_sort = "spaces"
+status_indicators = "symbols"
 [ui.toast]
 # off = disable pop-up notifications
 # herdr = show in-app toasts
