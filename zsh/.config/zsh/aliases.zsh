@@ -13,7 +13,7 @@ alias ct="claude --channels plugin:telegram@claude-plugins-official"
 alias vi="nvim"
 alias vim="nvim"
 alias nvim="lazy"
-alias lazy="NVIM_APPNAME=LazyVim nvim"
+alias lazy="NVIM_APPNAME=LazyVim command nvim"
 
 alias ls="eza --icons -a --git"
 alias lg="lazygit"

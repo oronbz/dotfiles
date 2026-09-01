@@ -46,4 +46,4 @@ Brewfile    brew bundle dump (taps, formulae, casks)
 
 - Startup ~120ms. Profile: prepend `zmodload zsh/zprof` to `.zshrc`, run `zprof`.
 - `compinit` uses the cached `~/.zcompdump` unless it's >24h old. New tool completion missing? `rm ~/.zcompdump`.
-- Keys: `Ctrl+Space`/`→` accept suggestion · `↑`/`↓` substring history · `Ctrl+R` fzf history · `Ctrl+T` fzf files · `Alt+C` fzf cd · `z`/`zi` zoxide.
+- Keys: `Ctrl+Space`/`→` accept suggestion · `↑`/`↓` substring history · `Ctrl+R` atuin history · `Ctrl+T` fzf files · `Alt+C` fzf cd · `z`/`zi` zoxide.
