@@ -60,7 +60,7 @@ gwa() {
   echo "$dir"
   command -v zoxide >/dev/null && zoxide add "$dir"
   if [ "${HERDR_ENV:-}" = 1 ]; then
-    herdr worktree open --cwd "$root" --path "$dir" --focus >/dev/null 2>&1
+    herdr worktree open --cwd "$root" --path "$dir" --label "$slug" --focus >/dev/null 2>&1
   else
     cd "$dir"
   fi
