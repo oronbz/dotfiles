@@ -24,7 +24,7 @@ read_only = ' 🔒'
 format = '[git:\(](bold blue)[$branch](bold red)[\)](bold blue) '
 
 [git_status]
-format = '([$ahead_behind]($style) )'
+format = '([$ahead_behind]($style)) '
 ahead = '⇡'
 behind = '⇣'
 diverged = '⇡⇣'
@@ -35,6 +35,6 @@ use_git_executable = true
 shell = ['sh']
 when = 'test -n "$(git status --porcelain --ignore-submodules 2>/dev/null)"'
 require_repo = true
-symbol = '✗'
+symbol = '⚡️'
 style = 'bold yellow'
-format = '[$symbol]($style) '
+format = '[$symbol]($style)'
