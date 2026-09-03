@@ -5,8 +5,8 @@ format = """
 $character\
 $directory\
 $git_branch\
-${custom.git_dirty}\
-$git_status"""
+(${custom.git_dirty}\
+$git_status )"""
 
 add_newline = false
 
@@ -24,7 +24,7 @@ read_only = ' 🔒'
 format = '[git:\(](bold blue)[$branch](bold red)[\)](bold blue) '
 
 [git_status]
-format = '([$ahead_behind]($style)) '
+format = '[$ahead_behind]($style)'
 ahead = '⇡'
 behind = '⇣'
 diverged = '⇡⇣'
