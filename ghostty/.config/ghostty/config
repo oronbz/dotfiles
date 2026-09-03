@@ -26,8 +26,6 @@ macos-option-as-alt = true
 # ---------------------------------------------------------------------------
 # Ghostty's own keybinds
 # ---------------------------------------------------------------------------
-keybind = super+ctrl+t=prompt_surface_title
-
 # Prompt fixes: send the control code instead of Ghostty's own action, so it
 # reaches the pane rather than acting on the outer Ghostty surface.
 #   ctrl+c  SIGINT
