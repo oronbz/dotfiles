@@ -1,8 +1,8 @@
 # font-family = "Fira Code"
 font-family = "JetBrainsMono NF"
-# JetBrains NF lacks U+25D0 (◐, herdr working indicator); pin it to Menlo so
-# rendering doesn't depend on the system fallback cascade.
-font-codepoint-map = U+25D0=Menlo
+# JetBrains NF lacks U+25D0-U+25D3 (◐◓◑◒, herdr/spinner indicators); pin them
+# to Menlo so rendering doesn't depend on the system fallback cascade.
+font-codepoint-map = U+25D0-U+25D3=Menlo
 theme = "Catppuccin Mocha"
 cursor-style = bar
 font-size = 14
