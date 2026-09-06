@@ -29,13 +29,3 @@ nvimclean() {
   rm -rf ~/.local/state/nvim
   rm -rf ~/.local/share/nvim
 }
-
-pfd() {
-  osascript 2>/dev/null <<'APPLESCRIPT'
-    tell application "Finder"
-      return POSIX path of (insertion location as alias)
-    end tell
-APPLESCRIPT
-}
-cdf() { cd "$(pfd)" }
-ofd() { open -a Finder "${1:-.}" }

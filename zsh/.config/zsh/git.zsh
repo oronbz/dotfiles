@@ -1,24 +1,3 @@
-git_current_branch() {
-  git symbolic-ref --short -q HEAD 2>/dev/null || git rev-parse --short HEAD 2>/dev/null
-}
-
-alias gst='git status'
-alias gb='git branch'
-alias gco='git checkout'
-alias gcb='git checkout -b'
-alias gcam='git commit --all --message'
-alias gcmsg='git commit --message'
-alias gd='git diff'
-alias gaa='git add --all'
-alias gl='git pull'
-alias gp='git push'
-alias gfo='git fetch origin'
-alias glog='git log --oneline --decorate --graph'
-alias glol='git log --graph --pretty="%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset"'
-alias ggpush='git push origin "$(git_current_branch)"'
-alias ggpull='git pull origin "$(git_current_branch)"'
-alias gpsup='git push --set-upstream origin $(git_current_branch)'
-
 alias gfom="git fetch origin master:master"
 alias gcom="gco master"
 alias gwl="git worktree list"

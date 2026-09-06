@@ -1,7 +1,6 @@
 [core]
 	excludesfile = /Users/oronb/.gitignore_global
 	editor = nvim
-	untrackedCache = true
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 

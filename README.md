@@ -7,9 +7,9 @@ macOS terminal setup. Managed with [GNU Stow](https://www.gnu.org/software/stow/
 | | |
 |---|---|
 | terminal | [ghostty](https://ghostty.org) + [herdr](https://github.com/herdr) |
-| shell | zsh, no framework — `zsh/.zshrc` + `zsh/.config/zsh/*.zsh` |
-| prompt | [starship](https://starship.rs) (`pastel-powerline` base, trimmed) |
-| plugins | zsh-autosuggestions · zsh-syntax-highlighting · zsh-completions · zsh-history-substring-search (brew) |
+| shell | zsh + [oh-my-zsh](https://ohmyz.sh) (`git` · `macos` plugins) — `zsh/.zshrc` + `zsh/.config/zsh/*.zsh` |
+| prompt | omz `robbyrussell` |
+| plugins | zsh-autosuggestions · zsh-syntax-highlighting · zsh-completions · zsh-history-substring-search |
 | tools | fzf · zoxide · eza · bat · lazygit · btop · k9s · yazi |
 | editor | nvim — LazyVim (default, `nvim`/`lazy`), NvChad (`chad`), AstroNvim (`astro`) · zed |
 
@@ -20,13 +20,12 @@ git clone git@github.com:oronbz/dotfiles.git ~/.dotfiles
 ~/.dotfiles/install.sh
 ```
 
-Installs Homebrew + `Brewfile`, creates `~/.config/zsh/secrets.zsh` from the example (fill it in), stows every package.
+Installs Homebrew + `Brewfile`, clones oh-my-zsh, creates `~/.config/zsh/secrets.zsh` from the example (fill it in), stows every package.
 
 ## Layout
 
 ```
 zsh/        .zshrc .zprofile .config/zsh/{path,aliases,git,functions}.zsh
-starship/   .config/starship.toml
 ghostty/    .config/ghostty/config
 herdr/      .config/herdr/config.toml
 git/        .gitconfig .config/git/ignore
@@ -44,6 +43,6 @@ Brewfile    brew bundle dump (taps, formulae, casks)
 
 ## zsh notes
 
-- Startup ~120ms. Profile: prepend `zmodload zsh/zprof` to `.zshrc`, run `zprof`.
-- `compinit` uses the cached `~/.zcompdump` unless it's >24h old. New tool completion missing? `rm ~/.zcompdump`.
+- Startup ~300ms. Profile: prepend `zmodload zsh/zprof` to `.zshrc`, run `zprof`.
+- omz owns `compinit`; dump at `~/.zcompdump-<host>-<zsh-version>`, rebuilt when omz revision or `fpath` changes. New tool completion missing? `rm ~/.zcompdump*`.
 - Keys: `Ctrl+Space`/`→` accept suggestion · `↑`/`↓` substring history · `Ctrl+R` atuin history · `Ctrl+T` fzf files · `Alt+C` fzf cd · `z`/`zi` zoxide.

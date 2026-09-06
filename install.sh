@@ -13,6 +13,7 @@ chmod g-w /opt/homebrew/share
 for pkg in */; do
   stow --no-folding --restow --target="$HOME" "${pkg%/}"
 done
-rm -f ~/.zcompdump
+[ -d ~/.oh-my-zsh ] || git clone --depth=1 https://github.com/ohmyzsh/ohmyzsh.git ~/.oh-my-zsh
+rm -f ~/.zcompdump*
 ./herdr-plugins.sh
 echo "done — open a new shell"
