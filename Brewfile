@@ -43,6 +43,8 @@ brew "fzf"
 brew "gh"
 # Highest-quality GIF encoder based on pngquant
 brew "gifski"
+# Quickly rewrite git repository history
+brew "git-filter-repo"
 # Open source programming language to build simple/reliable/efficient software
 brew "go"
 # Review-first terminal diff viewer for agent-authored changesets
@@ -142,6 +144,7 @@ cask "copilot-cli"
 cask "cousebara"
 cask "font-fira-code"
 cask "font-jetbrains-mono"
+cask "font-maple-mono-nf"
 cask "font-sf-mono-nerd-font"
 # Terminal emulator that uses platform-native UI and GPU acceleration
 cask "ghostty"
@@ -153,7 +156,6 @@ cask "maccy"
 cask "ngrok"
 # AI coding agent desktop client
 cask "opencode-desktop"
-cask "pinky"
 cask "sitter"
 npm "@google/gemini-cli"
 npm "@googleworkspace/cli"
