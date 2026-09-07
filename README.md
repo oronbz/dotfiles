@@ -1,5 +1,7 @@
 # dotfiles
 
+![ghostty + herdr: cheat sheet, LazyVim, git log](docs/hero.png)
+
 macOS terminal setup. Managed with [GNU Stow](https://www.gnu.org/software/stow/): each top-level directory is a package whose layout mirrors `$HOME`, stowed as per-file symlinks (`--no-folding`).
 
 ## Stack
