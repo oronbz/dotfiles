@@ -12,6 +12,6 @@ for src in "${plugins[@]}"; do
   if grep -q "github:${src}@" <<<"$installed"; then
     echo "herdr plugin ${src} already installed"
   else
-    herdr plugin install --yes "$src"
+    herdr plugin install "$src" --yes
   fi
 done
