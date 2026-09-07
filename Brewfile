@@ -1,14 +1,9 @@
-tap "anomalyco/tap"
-tap "cameroncooke/axe"
+tap "cameroncooke/axe", trusted: true
 tap "derailed/k9s"
-tap "epk/epk"
-tap "getsentry/xcodebuildmcp"
-tap "gromgit/brewtils"
-tap "oronbz/tap"
-tap "peonping/tap", "https://github.com/PeonPing/homebrew-tap"
-tap "pointfreeco/tap"
-tap "reyamira/tap", "https://github.com/reyamira/homebrew-tap.git"
-tap "steipete/tap"
+tap "getsentry/xcodebuildmcp", trusted: true
+tap "gromgit/brewtils", trusted: true
+tap "oronbz/tap", trusted: true
+tap "pointfreeco/tap", trusted: true
 # Improved shell history for zsh, bash, fish and nushell
 brew "atuin"
 # Interpreted, interactive, object-oriented programming language
@@ -21,6 +16,8 @@ brew "bat"
 brew "btop"
 # New way of working with Protocol Buffers
 brew "buf"
+# Incredibly fast JavaScript runtime, bundler, test runner, and package manager
+brew "bun"
 # Library to render SVG files using Cairo
 brew "librsvg"
 # Versatile and fast Unicode/ASCII/ANSI graphics renderer
@@ -41,10 +38,10 @@ brew "fzf"
 brew "gh"
 # Highest-quality GIF encoder based on pngquant
 brew "gifski"
-# Render markdown on the CLI
-brew "glow"
 # Quickly rewrite git repository history
 brew "git-filter-repo"
+# Render markdown on the CLI
+brew "glow"
 # Open source programming language to build simple/reliable/efficient software
 brew "go"
 # Review-first terminal diff viewer for agent-authored changesets
@@ -103,6 +100,8 @@ brew "the_silver_searcher"
 brew "thefuck"
 # Terminal multiplexer
 brew "tmux"
+# Parser generator tool
+brew "tree-sitter-cli"
 # Code review TUI with vim keybindings
 brew "tuicr"
 # Maintained ctags implementation
@@ -131,39 +130,28 @@ brew "zsh-autosuggestions"
 brew "zsh-completions"
 # Fish shell like syntax highlighting for zsh
 brew "zsh-syntax-highlighting"
+# CLI tool for interacting with iOS Simulators via accessibility and HID APIs
+brew "cameroncooke/axe/axe"
 # Kubernetes CLI To Manage Your Clusters In Style!
 brew "derailed/k9s/k9s", trusted: true
+# Model Context Protocol server for Xcode project workflows
+brew "getsentry/xcodebuildmcp/xcodebuildmcp"
+# Interactive TUI for Homebrew
+brew "gromgit/brewtils/taproom"
+# A terminal UI for Apple Reminders
+brew "oronbz/tap/nag"
+# CLI for the Point-Free Way
+brew "pointfreeco/tap/pfw"
 # Display management tool
 cask "betterdisplay"
-# Menu bar usage monitor for Codex and Claude
-cask "codexbar"
-# Brings the power of Copilot coding agent directly to your terminal
-cask "copilot-cli"
-cask "cousebara"
 cask "font-fira-code"
 cask "font-jetbrains-mono"
 cask "font-maple-mono-nf"
-cask "font-sf-mono-nerd-font"
 # Terminal emulator that uses platform-native UI and GPU acceleration
 cask "ghostty"
-# Xcode extension for GitHub Copilot
-cask "github-copilot-for-xcode"
 # Clipboard manager
 cask "maccy"
 # Reverse proxy, secure introspectable tunnels to localhost
 cask "ngrok"
-# AI coding agent desktop client
-cask "opencode-desktop"
-cask "sitter"
-npm "@google/gemini-cli"
-npm "@googleworkspace/cli"
-npm "@playwright/cli"
-npm "@tailwindcss/language-server"
-npm "agent-device"
-npm "defuddle"
-npm "netlify-cli"
-npm "react-native-cli"
-npm "surge"
-npm "tree-sitter-cli"
-npm "vercel"
-npm "xcodebuildmcp"
+# Menu bar app for alternating between sitting and standing at a standing desk
+cask "oronbz/tap/sitter"
