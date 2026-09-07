@@ -22,14 +22,18 @@ git clone git@github.com:oronbz/dotfiles.git ~/.dotfiles
 ~/.dotfiles/install.sh
 ```
 
-Installs Homebrew + `Brewfile`, clones oh-my-zsh, creates `~/.config/zsh/secrets.zsh` from the example (fill it in), stows every package.
+Installs Homebrew + `Brewfile`, clones oh-my-zsh, creates `~/.config/zsh/secrets.zsh` from the example (fill it in), seeds `~/.gitconfig.local` with your git identity (taken from your existing global config, else prompted), stows every package.
+
+Existing dotfiles that would collide are moved to `~/.dotfiles-backup/<timestamp>/`, never overwritten. Merge what you still need into `~/.config/zsh/work.zsh` (shell) or `~/.gitconfig.local` (git) — both are auto-loaded and gitignored.
+
+`brew bundle` failures don't abort the install. Typical one: a cask whose app you already installed by hand (e.g. Ghostty) — delete the app and rerun, or leave it.
 
 ## Layout
 
 ```
 zsh/        .zshrc .zprofile .config/zsh/{path,aliases,git,functions}.zsh
 ghostty/    .config/ghostty/config
-herdr/      .config/herdr/config.toml
+herdr/      .config/herdr/{config.toml,agent-picker.sh,clear-pane.sh}
 git/        .gitconfig .config/git/ignore
 nvim/       .config/LazyVim
 lazygit/ zed/
@@ -40,8 +44,9 @@ Brewfile    brew bundle dump (taps, formulae, casks)
 
 - Edit files in `~/.dotfiles` directly — they're symlinked, changes are live.
 - New config: `mkdir -p ~/.dotfiles/<pkg>/.config/<pkg>`, move the file in, `cd ~/.dotfiles && stow --no-folding <pkg>`.
-- After `brew install`: `brew bundle dump --force --file=~/.dotfiles/Brewfile`.
+- After `brew install`: `brew bundle dump --force --file=~/.dotfiles/Brewfile`. npm/go/mas skipped via `HOMEBREW_BUNDLE_DUMP_NO_*` in `path.zsh`. Dump silently drops formulae from untrusted taps — `brew trust --tap <user/repo>` first, then they land as `trusted: true`.
 - Secrets live in `~/.config/zsh/secrets.zsh`, work-machine env/functions in `~/.config/zsh/work.zsh`; auto-sourced like the rest, both gitignored, never in this repo.
+- Git identity (`user.name`/`user.email`) and any other machine-local git config live in `~/.gitconfig.local`, included from `.gitconfig`. Nothing personal in the tracked `.gitconfig`.
 
 ## zsh notes
 
@@ -113,7 +118,6 @@ Brewfile    brew bundle dump (taps, formulae, casks)
 | `h` | herdr |
 | `cc` · `yolo` | claude, skip permissions |
 | `ct` | claude via telegram channel |
-| `co` · `oc` · `occ` | copilot · opencode · edit opencode config |
 | `vi` · `vim` · `nvim` · `lazy` | LazyVim |
 | `lg` · `top` · `img` | lazygit · btop · chafa preview |
 | `zshc` · `szh` · `ghc` | edit .zshrc · reload · edit ghostty config |
