@@ -113,7 +113,7 @@ Brewfile    brew bundle dump (taps, formulae, casks)
 | `ct` | claude via telegram channel |
 | `co` · `oc` · `occ` | copilot · opencode · edit opencode config |
 | `vi` · `vim` · `nvim` · `lazy` | LazyVim |
-| `lg` · `top` · `img` · `logos` | lazygit · btop · chafa preview · fastfetch logos |
+| `lg` · `top` · `img` | lazygit · btop · chafa preview |
 | `zshc` · `szh` · `ghc` | edit .zshrc · reload · edit ghostty config |
 | `code` | VS Code here |
 | `bt` | restart bluetooth |

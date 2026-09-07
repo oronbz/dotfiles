@@ -17,7 +17,6 @@ alias lazy="NVIM_APPNAME=LazyVim command nvim"
 alias lg="lazygit"
 alias img="chafa --symbols=block --size=40x20"
 alias f="yazi"
-alias logos="script -q /dev/null fastfetch --print-logos | less -r"
 alias top="btop"
 alias bt='sudo pkill bluetoothd'
 
