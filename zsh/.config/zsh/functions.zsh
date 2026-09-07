@@ -30,4 +30,4 @@ nvimclean() {
   rm -rf ~/.local/share/nvim
 }
 
-cheat() { awk '/^## Cheat sheet/{p=1;next} /^## /{p=0} p' ~/.dotfiles/README.md | bat --style=plain --language=md --paging=never }
+cheat() { awk '/^## Cheat sheet/{p=1;next} /^## /{p=0} p' ~/.dotfiles/README.md | glow -s tokyo-night -w $((COLUMNS < 110 ? COLUMNS : 110)) - }

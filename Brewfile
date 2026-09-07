@@ -43,6 +43,8 @@ brew "fzf"
 brew "gh"
 # Highest-quality GIF encoder based on pngquant
 brew "gifski"
+# Render markdown on the CLI
+brew "glow"
 # Quickly rewrite git repository history
 brew "git-filter-repo"
 # Open source programming language to build simple/reliable/efficient software

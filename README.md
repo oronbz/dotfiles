@@ -44,11 +44,10 @@ Brewfile    brew bundle dump (taps, formulae, casks)
 ## zsh notes
 
 - Startup ~300ms. Profile: prepend `zmodload zsh/zprof` to `.zshrc`, run `zprof`.
+- `cheat` renders the cheat sheet below with glow.
 - omz owns `compinit`; dump at `~/.oh-my-zsh/cache/.zcompdump-<zsh-version>`, rebuilt when omz revision or `fpath` changes. New tool completion missing? `rm ~/.oh-my-zsh/cache/.zcompdump*`.
 
 ## Cheat sheet
-
-`cheat` prints this section in the terminal.
 
 ### Herdr (prefix = `ctrl+b`)
 
