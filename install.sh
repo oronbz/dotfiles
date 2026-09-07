@@ -14,6 +14,6 @@ for pkg in */; do
   stow --no-folding --restow --target="$HOME" "${pkg%/}"
 done
 [ -d ~/.oh-my-zsh ] || git clone --depth=1 https://github.com/ohmyzsh/ohmyzsh.git ~/.oh-my-zsh
-rm -f ~/.zcompdump*
+rm -f ~/.zcompdump* ~/.oh-my-zsh/cache/.zcompdump*
 ./herdr-plugins.sh
 echo "done — open a new shell"

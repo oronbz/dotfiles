@@ -29,3 +29,5 @@ nvimclean() {
   rm -rf ~/.local/state/nvim
   rm -rf ~/.local/share/nvim
 }
+
+cheat() { awk '/^## Cheat sheet/{p=1;next} /^## /{p=0} p' ~/.dotfiles/README.md | bat --style=plain --language=md --paging=never }

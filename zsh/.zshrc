@@ -1,16 +1,20 @@
-ZDOTCONF="$HOME/.config/zsh"
-
-fpath=("$ZDOTCONF/completions" /opt/homebrew/share/zsh-completions /opt/homebrew/share/zsh/site-functions $fpath)
 export ZSH="$HOME/.oh-my-zsh"
+ZSH_CUSTOM="$HOME/.config/zsh"
+ZSH_CACHE_DIR="$ZSH/cache"
+ZSH_COMPDUMP="$ZSH_CACHE_DIR/.zcompdump-$ZSH_VERSION"
+ZSH_DISABLE_COMPFIX="true"
 ZSH_THEME="robbyrussell"
-plugins=(git macos)
 DISABLE_AUTO_TITLE="true"
-zstyle ':omz:update' mode disabled
-source "$ZSH/oh-my-zsh.sh"
+DISABLE_UNTRACKED_FILES_DIRTY="true"
+HIST_STAMPS="yyyy-mm-dd"
+zstyle ':omz:update' mode auto
+zstyle ':omz:plugins:eza' icons yes
+zstyle ':omz:plugins:eza' git-status yes
+zstyle ':omz:plugins:eza' dirs-first yes
+plugins=(git macos eza history-substring-search)
 
-for f in path secrets work aliases git functions; do
-  [[ -r "$ZDOTCONF/$f.zsh" ]] && source "$ZDOTCONF/$f.zsh"
-done
+fpath=(/opt/homebrew/share/zsh-completions /opt/homebrew/share/zsh/site-functions $fpath)
+source "$ZSH/oh-my-zsh.sh"
 
 HISTSIZE=100000
 SAVEHIST=100000
@@ -51,7 +55,6 @@ bindkey '^ ' autosuggest-accept
 
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-source /opt/homebrew/share/zsh-history-substring-search/zsh-history-substring-search.zsh
 HISTORY_SUBSTRING_SEARCH_ENSURE_UNIQUE=1
 HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND=''
 HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_NOT_FOUND=''

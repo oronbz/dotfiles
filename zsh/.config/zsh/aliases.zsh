@@ -14,7 +14,6 @@ alias vim="nvim"
 alias nvim="lazy"
 alias lazy="NVIM_APPNAME=LazyVim command nvim"
 
-alias ls="eza --icons -a --git"
 alias lg="lazygit"
 alias img="chafa --symbols=block --size=40x20"
 alias f="yazi"
