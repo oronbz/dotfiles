@@ -82,39 +82,39 @@ Brewfile    brew bundle dump (taps, formulae, casks)
 
 | alias | command |
 |---|---|
-| `gst` `gd` `gaa` | status · diff · add --all |
-| `gco` `gcb` `gcm` `gcom` | checkout · checkout -b · checkout main branch · checkout master |
-| `gcmsg` `gcam` | commit -m · commit -am |
-| `gl` `gp` `ggpull` `ggpush` `gpsup` | pull · push · pull/push current branch · push --set-upstream |
-| `gfo` `gfom` | fetch origin · fetch origin master:master |
-| `glog` `glol` | log graph oneline · log graph pretty |
-| `gbg` `gbgD` · `stale` `prune` | list/delete gone branches · same, homegrown |
+| `gst` · `gd` · `gaa` | status · diff · add --all |
+| `gco` · `gcb` · `gcm` · `gcom` | checkout · checkout -b · checkout main branch · checkout master |
+| `gcmsg` · `gcam` | commit -m · commit -am |
+| `gl` · `gp` · `ggpull` · `ggpush` · `gpsup` | pull · push · pull/push current branch · push --set-upstream |
+| `gfo` · `gfom` | fetch origin · fetch origin master:master |
+| `glog` · `glol` | log graph oneline · log graph pretty |
+| `gbg` · `gbgD` · `stale` · `prune` | list/delete gone branches · same, homegrown |
 | `gwa [-b branch] <slug> [base]` | add worktree under `.worktrees/`, opens in herdr |
 | `gwr <slug\|branch\|path>` | remove worktree, closes herdr workspace |
-| `gwl` `gwtls` | worktree list |
-| `pr` `prd` | gh pr create --fill · draft |
+| `gwl` · `gwtls` | worktree list |
+| `pr` · `prd` | gh pr create --fill · draft |
 | `gg "msg"` | add . + commit + push |
 
 ### files & dirs
 
 | alias | command |
 |---|---|
-| `ls` `la` `ll` `lsd` `ldot` `lD` | eza variants (dirs first, git, icons) |
+| `ls` · `la` · `ll` · `lsd` · `ldot` · `lD` | eza variants (dirs first, git, icons) |
 | `f` | yazi |
-| `..` `...` `-` `d` `1..9` | omz dir stack |
-| `cdf` `pfd` `ofd` `pfs` | cd to Finder dir · print Finder dir · open Finder here · Finder selection |
+| `..` · `...` · `-` · `d` · `1..9` | omz dir stack |
+| `cdf` · `pfd` · `ofd` · `pfs` | cd to Finder dir · print Finder dir · open Finder here · Finder selection |
 
 ### tools & apps
 
 | alias | command |
 |---|---|
 | `h` | herdr |
-| `cc` `yolo` | claude, skip permissions |
+| `cc` · `yolo` | claude, skip permissions |
 | `ct` | claude via telegram channel |
-| `co` `oc` `occ` | copilot · opencode · edit opencode config |
-| `vi` `vim` `nvim` `lazy` | LazyVim |
-| `lg` `top` `img` `logos` | lazygit · btop · chafa preview · fastfetch logos |
-| `zshc` `szh` `ghc` | edit .zshrc · reload · edit ghostty config |
+| `co` · `oc` · `occ` | copilot · opencode · edit opencode config |
+| `vi` · `vim` · `nvim` · `lazy` | LazyVim |
+| `lg` · `top` · `img` · `logos` | lazygit · btop · chafa preview · fastfetch logos |
+| `zshc` · `szh` · `ghc` | edit .zshrc · reload · edit ghostty config |
 | `code` | VS Code here |
 | `bt` | restart bluetooth |
 
@@ -135,6 +135,6 @@ Brewfile    brew bundle dump (taps, formulae, casks)
 |---|---|
 | `godev` | cd to go src |
 | `nvimclean` | wipe nvim state + share |
-| `reset_audio` `kill_audio` | restart CoreAudio |
-| `dawdl` `eawdl` | AWDL interface down/up |
+| `reset_audio` · `kill_audio` | restart CoreAudio |
+| `dawdl` · `eawdl` | AWDL interface down/up |
 | `cheat` | this |
