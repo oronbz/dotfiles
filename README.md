@@ -17,10 +17,8 @@ macOS terminal setup. Managed with [GNU Stow](https://www.gnu.org/software/stow/
 
 ## Install
 
-Fork first if you plan to commit changes — the repo is edited live at `~/.dotfiles`, so a plain clone leaves you nowhere to push.
-
 ```sh
-git clone git@github.com:<you>/dotfiles.git ~/.dotfiles
+git clone git@github.com:oronbz/dotfiles.git ~/.dotfiles
 ~/.dotfiles/install.sh
 ```
 
