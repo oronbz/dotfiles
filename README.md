@@ -13,7 +13,7 @@ macOS terminal setup. Managed with [GNU Stow](https://www.gnu.org/software/stow/
 | prompt | omz `robbyrussell` |
 | plugins | omz: `git` · `macos` · `eza` · `history-substring-search` · brew: zsh-autosuggestions · zsh-syntax-highlighting · zsh-completions |
 | tools | fzf · zoxide · eza · bat · lazygit · btop · k9s · yazi |
-| editor | nvim — LazyVim (`nvim`/`lazy`) · zed |
+| editor | nvim — LazyVim (`nvim`/`lazy`) |
 
 ## Install
 
@@ -38,7 +38,7 @@ ghostty/    .config/ghostty/config
 herdr/      .config/herdr/{config.toml,agent-picker.sh,clear-pane.sh}
 git/        .gitconfig .config/git/ignore
 nvim/       .config/LazyVim
-lazygit/ zed/
+lazygit/
 Brewfile    brew bundle dump (taps, formulae, casks)
 ```
 
