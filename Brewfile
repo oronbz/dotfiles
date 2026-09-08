@@ -44,6 +44,8 @@ brew "git-filter-repo"
 brew "glow"
 # Open source programming language to build simple/reliable/efficient software
 brew "go"
+# Agent multiplexer that lives in your terminal
+brew "herdr"
 # Review-first terminal diff viewer for agent-authored changesets
 brew "hunk"
 # Tools and libraries to manipulate images in select formats

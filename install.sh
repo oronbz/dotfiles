@@ -39,7 +39,7 @@ if [ -d "$backup" ]; then
   echo "merge what you still need into ~/.config/zsh/work.zsh (shell) or ~/.gitconfig.local (git)"
 fi
 
-chmod g-w /opt/homebrew/share
+command -v stow >/dev/null || brew install stow
 for pkg in "${packages[@]}"; do
   stow --no-folding --restow --target="$HOME" "$pkg"
 done

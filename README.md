@@ -17,14 +17,18 @@ macOS terminal setup. Managed with [GNU Stow](https://www.gnu.org/software/stow/
 
 ## Install
 
+Fork first if you plan to commit changes — the repo is edited live at `~/.dotfiles`, so a plain clone leaves you nowhere to push.
+
 ```sh
-git clone git@github.com:oronbz/dotfiles.git ~/.dotfiles
+git clone git@github.com:<you>/dotfiles.git ~/.dotfiles
 ~/.dotfiles/install.sh
 ```
 
 Installs Homebrew + `Brewfile`, clones oh-my-zsh, creates `~/.config/zsh/secrets.zsh` from the example (fill it in), seeds `~/.gitconfig.local` with your git identity (taken from your existing global config, else prompted), stows every package.
 
 Existing dotfiles that would collide are moved to `~/.dotfiles-backup/<timestamp>/`, never overwritten. Merge what you still need into `~/.config/zsh/work.zsh` (shell) or `~/.gitconfig.local` (git) — both are auto-loaded and gitignored.
+
+Node/Ruby/Python versions come from `mise` (`mise activate --shims` in `.zshrc`), not nvm/rbenv/pyenv — if you rely on those, migrate to `mise use` or re-add their init in `~/.config/zsh/work.zsh`.
 
 `brew bundle` failures don't abort the install. Typical one: a cask whose app you already installed by hand (e.g. Ghostty) — delete the app and rerun, or leave it.
 
