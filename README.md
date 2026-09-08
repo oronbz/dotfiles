@@ -26,7 +26,7 @@ Installs Homebrew + `Brewfile`, clones oh-my-zsh, creates `~/.config/zsh/secrets
 
 Existing dotfiles that would collide are moved to `~/.dotfiles-backup/<timestamp>/`, never overwritten. Merge what you still need into `~/.config/zsh/work.zsh` (shell) or `~/.gitconfig.local` (git) — both are auto-loaded and gitignored.
 
-Node/Ruby/Python versions come from `mise` (`mise activate --shims` in `.zshrc`), not nvm/rbenv/pyenv — if you rely on those, migrate to `mise use` or re-add their init in `~/.config/zsh/work.zsh`.
+No version manager: node, ruby (`/opt/homebrew/opt/ruby/bin` first in PATH) and python come straight from brew. nvm/rbenv/pyenv users — re-add their init in `~/.config/zsh/work.zsh`.
 
 `brew bundle` failures don't abort the install. Typical one: a cask whose app you already installed by hand (e.g. Ghostty) — delete the app and rerun, or leave it.
 
