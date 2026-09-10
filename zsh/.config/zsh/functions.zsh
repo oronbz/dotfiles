@@ -6,7 +6,7 @@ cpreviews() { xcrun simctl --set previews delete all }
 swiftpm() { rm -rf ./Rider/.swiftpm }
 fixschemes() {
   local f suppressed
-  find . \( -path "*/DerivedData/*" -o -path "*/Build/*" \) -prune -o -name xcschememanagement.plist -print | while read -r f; do
+  find . \( -path "*/DerivedData/*" -o -path "*/Build/*" -o -path "*/.build/*" \) -prune -o -name xcschememanagement.plist -print | while read -r f; do
     suppressed=$(plutil -extract SuppressBuildableAutocreation raw "$f" 2>/dev/null) || continue
     plutil -remove SuppressBuildableAutocreation "$f" && echo "unsuppressed in $f: ${suppressed//$'\n'/, }"
   done
