@@ -11,10 +11,13 @@ zstyle ':omz:update' mode auto
 zstyle ':omz:plugins:eza' icons yes
 zstyle ':omz:plugins:eza' git-status yes
 zstyle ':omz:plugins:eza' dirs-first yes
-plugins=(git macos eza history-substring-search)
+plugins=(git macos history-substring-search)
+# Claude Code sets CLAUDECODE: its shells get plain ls and bash-like globbing/word splitting.
+[[ -z $CLAUDECODE ]] && plugins+=(eza)
 
 fpath=(/opt/homebrew/share/zsh-completions /opt/homebrew/share/zsh/site-functions $fpath)
 source "$ZSH/oh-my-zsh.sh"
+[[ -n $CLAUDECODE ]] && setopt no_nomatch no_equals sh_word_split
 
 HISTSIZE=100000
 SAVEHIST=100000
