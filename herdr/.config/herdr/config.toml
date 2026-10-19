@@ -417,15 +417,15 @@ type = "plugin_action"
 command = "annotate.last"
 description = "review the agent's last reply"
 
-# Ghud
+# Visor
 [[keys.command]]
 key = "cmd+shift+g"
 type = "plugin_action"
-command = "ghud.toggle"
-description = "ghud"
+command = "visor.toggle"
+description = "visor"
 
 [[keys.command]]
 key = "prefix+d"
 type = "plugin_action"
-command = "ghud.toggle"
-description = "ghud"
+command = "visor.toggle"
+description = "visor"
