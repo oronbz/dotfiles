@@ -420,16 +420,12 @@ description = "review the agent's last reply"
 # Ghud
 [[keys.command]]
 key = "cmd+shift+g"
-type = "popup"
-command = "ghud --close-key cmd+shift+g --close-key 'ctrl+b d'"
+type = "plugin_action"
+command = "ghud.toggle"
 description = "ghud"
-width = "100%"
-height = "100%"
 
 [[keys.command]]
 key = "prefix+d"
-type = "popup"
-command = "ghud --close-key cmd+shift+g --close-key 'ctrl+b d'"
+type = "plugin_action"
+command = "ghud.toggle"
 description = "ghud"
-width = "100%"
-height = "100%"
