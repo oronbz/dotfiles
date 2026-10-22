@@ -2,6 +2,7 @@ alias zshc="nvim ~/.zshrc"
 alias szh="source ~/.zshrc"
 
 alias h="herdr"
+alias v="visor"
 alias cc="claude --dangerously-skip-permissions"
 alias yolo="claude --dangerously-skip-permissions"
 alias ct="claude --channels plugin:telegram@claude-plugins-official"
