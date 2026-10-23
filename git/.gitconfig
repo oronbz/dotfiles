@@ -25,3 +25,5 @@
 	helper = !/opt/homebrew/bin/gh auth git-credential
 [include]
 	path = ~/.gitconfig.local
+[alias]
+	fresh = "!f() { git fetch origin && git switch --no-track -c \"$1\" origin/master; }; f"

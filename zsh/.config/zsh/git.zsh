@@ -1,4 +1,5 @@
 alias gfom='git fetch origin $(git_main_branch):$(git_main_branch)'
+alias gfomd='git fetch origin && git switch --detach origin/$(git_main_branch)'
 alias gcom='gco $(git_main_branch)'
 alias gwl="git worktree list"
 alias pr="gh pr create --fill"
