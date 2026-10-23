@@ -92,10 +92,10 @@ Brewfile    brew bundle dump (taps, formulae, casks)
 | alias | command |
 |---|---|
 | `gst` · `gd` · `gaa` | status · diff · add --all |
-| `gco` · `gcb` · `gcm` · `gcom` | checkout · checkout -b · checkout main branch · checkout master |
+| `gco` · `gcb` · `gcm` · `gcom` | checkout · checkout -b · checkout main branch · same (main or master) |
 | `gcmsg` · `gcam` | commit -m · commit -am |
 | `gl` · `gp` · `ggpull` · `ggpush` · `gpsup` | pull · push · pull/push current branch · push --set-upstream |
-| `gfo` · `gfom` | fetch origin · fetch origin master:master |
+| `gfo` · `gfom` | fetch origin · fetch origin main:main (or master:master) |
 | `glog` · `glol` | log graph oneline · log graph pretty |
 | `gbg` · `gbgD` · `stale` · `prune` | list/delete gone branches · same, homegrown |
 | `gwa [-b branch] <slug> [base]` | add worktree under `.worktrees/`, opens in herdr |

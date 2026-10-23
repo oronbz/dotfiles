@@ -1,5 +1,5 @@
-alias gfom="git fetch origin master:master"
-alias gcom="gco master"
+alias gfom='git fetch origin $(git_main_branch):$(git_main_branch)'
+alias gcom='gco $(git_main_branch)'
 alias gwl="git worktree list"
 alias pr="gh pr create --fill"
 alias prd="gh pr create --fill --draft"
@@ -27,14 +27,14 @@ stale() {
 
 gwa() {
   local -a opt_b; zparseopts -D -E b:=opt_b
-  [ -z "$1" ] && { echo "usage: gwa [-b <branch>] <branch|slug> [base=master]"; return 1; }
+  [ -z "$1" ] && { echo "usage: gwa [-b <branch>] <branch|slug> [base=main/master]"; return 1; }
   local branch="${opt_b[2]:-$1}" slug="${1##*/}"
   local root; root=$(git rev-parse --path-format=absolute --git-common-dir) || return 1; root=${root%/.git}
   local dir="$root/.worktrees/$slug"
   if git show-ref --verify --quiet "refs/heads/$branch"; then
     git worktree add "$dir" "$branch"
   else
-    git worktree add -b "$branch" "$dir" "${2:-master}"
+    git worktree add -b "$branch" "$dir" "${2:-$(git_main_branch)}"
   fi || return 1
   echo "$dir"
   command -v zoxide >/dev/null && zoxide add "$dir"
