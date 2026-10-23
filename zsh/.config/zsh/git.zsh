@@ -61,5 +61,48 @@ gwr() {
   fi
   git worktree remove "$@" "$dir" || return 1
   command -v zoxide >/dev/null && zoxide remove "$dir" 2>/dev/null
+  _gw_rm ${(f)"$(_gw_junk "$dir")"}
   echo "removed $dir"
+}
+
+gwsweep() {
+  local -a junk; junk=(${(f)"$(_gw_junk)"})
+  [[ $1 == -n ]] && { print -l $junk; return; }
+  _gw_rm $junk || echo "nothing to sweep"
+}
+
+_gw_junk() {
+  local dir=$1 d p; local -a claude mem
+  for d in ~/Library/Developer/Xcode/DerivedData/*(N/); do
+    [[ ${d:t} =~ '-[a-z]{28}$' ]] || continue
+    p=$(/usr/libexec/PlistBuddy -c 'Print :WorkspacePath' "$d/info.plist" 2>/dev/null)
+    if [[ -n $dir ]]; then [[ $p == $dir/* ]]; else [[ -z $p || ! -e $p ]]; fi && print -r -- "$d"
+  done
+  if [[ -n $dir ]]; then
+    for d in ~/Library/Caches/xcode-build-server/${dir//\//-}(N); do print -r -- "$d"; done
+    claude=(~/.claude/projects/${dir//[^A-Za-z0-9]/-}(N))
+  else
+    for d in ~/Library/Caches/xcode-build-server/*(N/); do _gw_alive ${d:t} '/' || print -r -- "$d"; done
+    for d in ~/.claude/projects/*(N/); do _gw_alive ${d:t} '[^A-Za-z0-9]' || claude+=$d; done
+  fi
+  for d in $claude; do
+    mem=($d/memory/*(NY1))
+    if (( $#mem )); then print -u2 "kept, has memory: $d"; else print -r -- "$d"; fi
+  done
+}
+
+# Cache keys flatten a path into dashes, so walk the filesystem to see if any real path flattens to the key.
+_gw_alive() {
+  local key=$1 base=$3 e s
+  for e in "$base"/*(ND); do
+    s=-${${e:t}//$~2/-}
+    [[ $key == "$s" ]] && return 0
+    [[ -d $e && $key == ${(b)s}-* ]] && _gw_alive "${key:${#s}}" "$2" "$e" && return 0
+  done
+  return 1
+}
+
+_gw_rm() {
+  (( $# )) || return 1
+  print -l "purging:" "$@"; rm -rf "$@" &!
 }
