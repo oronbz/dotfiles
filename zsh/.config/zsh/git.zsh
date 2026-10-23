@@ -72,23 +72,18 @@ gwsweep() {
 }
 
 _gw_junk() {
-  local dir=$1 d p; local -a claude mem
+  local dir=$1 d p
   for d in ~/Library/Developer/Xcode/DerivedData/*(N/); do
     [[ ${d:t} =~ '-[a-z]{28}$' ]] || continue
     p=$(/usr/libexec/PlistBuddy -c 'Print :WorkspacePath' "$d/info.plist" 2>/dev/null)
     if [[ -n $dir ]]; then [[ $p == $dir/* ]]; else [[ -z $p || ! -e $p ]]; fi && print -r -- "$d"
   done
   if [[ -n $dir ]]; then
-    for d in ~/Library/Caches/xcode-build-server/${dir//\//-}(N); do print -r -- "$d"; done
-    claude=(~/.claude/projects/${dir//[^A-Za-z0-9]/-}(N))
+    for d in ~/Library/Caches/xcode-build-server/${dir//\//-}(N) ~/.claude/projects/${dir//[^A-Za-z0-9]/-}(N); do print -r -- "$d"; done
   else
     for d in ~/Library/Caches/xcode-build-server/*(N/); do _gw_alive ${d:t} '/' || print -r -- "$d"; done
-    for d in ~/.claude/projects/*(N/); do _gw_alive ${d:t} '[^A-Za-z0-9]' || claude+=$d; done
+    for d in ~/.claude/projects/*(N/); do _gw_alive ${d:t} '[^A-Za-z0-9]' || print -r -- "$d"; done
   fi
-  for d in $claude; do
-    mem=($d/memory/*(NY1))
-    if (( $#mem )); then print -u2 "kept, has memory: $d"; else print -r -- "$d"; fi
-  done
 }
 
 # Cache keys flatten a path into dashes, so walk the filesystem to see if any real path flattens to the key.
