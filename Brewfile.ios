@@ -1,0 +1,17 @@
+tap "pointfreeco/tap", trusted: true
+# New way of working with Protocol Buffers
+brew "buf"
+# Powerful, clean, object-oriented scripting language
+brew "ruby", link: false
+# Plugin and runtime library for using protobuf with Swift
+brew "swift-protobuf"
+# Formatting tool for reformatting Swift code
+brew "swiftformat"
+# Tool to enforce Swift style and conventions
+brew "swiftlint"
+# Build server protocol implementation for integrating Xcode with sourcekit-lsp
+brew "xcode-build-server"
+# Command-line tool to install and switch between multiple versions of Xcode
+brew "xcodes"
+# CLI for the Point-Free Way
+brew "pointfreeco/tap/pfw"

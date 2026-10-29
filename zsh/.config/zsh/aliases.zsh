@@ -17,8 +17,3 @@ alias img="chafa --symbols=block --size=40x20"
 alias f="yazi"
 alias top="btop"
 alias bt='sudo pkill bluetoothd'
-
-alias android_events="adb logcat | grep -s '\[Event\]\|\[Properties\]'"
-alias cpgitignore="cp $HOME/Developer/godot/.gitignore ."
-alias godot="~/Library/Application\ Support/Steam/steamapps/common/Godot\ Engine/Godot.app/Contents/MacOS/Godot -e"
-alias stree='/Applications/SourceTree.app/Contents/Resources/stree'

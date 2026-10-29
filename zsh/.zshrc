@@ -48,8 +48,6 @@ cached_init zoxide zoxide init zsh
 cached_init atuin atuin init zsh --disable-up-arrow
 
 [[ -s "$HOME/.bun/_bun" ]] && source "$HOME/.bun/_bun"
-[[ -f "$HOME/Desktop/google-cloud-sdk/path.zsh.inc" ]] && source "$HOME/Desktop/google-cloud-sdk/path.zsh.inc"
-[[ -f "$HOME/Desktop/google-cloud-sdk/completion.zsh.inc" ]] && source "$HOME/Desktop/google-cloud-sdk/completion.zsh.inc"
 
 source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 ZSH_AUTOSUGGEST_STRATEGY=(history completion)

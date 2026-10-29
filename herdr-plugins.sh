@@ -3,6 +3,9 @@ set -euo pipefail
 
 plugins=(
   plannotator/herdr-annotate
+  oronbz/herdr-claude-tab-rename
+  oronbz/shepherd/plugin
+  oronbz/visor/herdr
 )
 
 command -v herdr >/dev/null || { echo "herdr not installed, skipping plugins" >&2; exit 0; }

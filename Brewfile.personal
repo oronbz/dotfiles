@@ -1,0 +1,15 @@
+tap "oronbz/tap", trusted: true
+tap "gromgit/brewtils", trusted: true
+tap "rjyo/moshi", trusted: true
+# Remote terminal application
+brew "mosh"
+# Interactive TUI for Homebrew
+brew "gromgit/brewtils/taproom"
+# Portable daemon + CLI that bridges AI coding agents to the Moshi mobile app
+brew "rjyo/moshi/moshi-hook"
+# Display management tool
+cask "betterdisplay"
+# Clipboard manager
+cask "maccy"
+# Menu bar app for GitHub pull requests
+cask "oronbz/tap/pullfather", trusted: true
