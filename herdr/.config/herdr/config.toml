@@ -418,7 +418,7 @@ command = "annotate.last"
 description = "pick an agent reply to review"
 
 [[keys.command]]
-key = "prefix+ctrl+r"
+key = "prefix+ctrl+t"
 type = "plugin_action"
 command = "annotate.review"
 description = "review this repo's changes"
@@ -431,7 +431,7 @@ description = "review this pane's recent output"
 
 # tuicr
 [[keys.command]]
-key = "prefix+ctrl+t"
+key = "prefix+ctrl+r"
 type = "popup"
 command = "~/.config/herdr/tuicr-popup.sh"
 description = "tuicr: pick changes or commits to review"
