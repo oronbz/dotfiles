@@ -406,16 +406,28 @@ description = "manage annotations"
 
 # Document review (plannotator-tui)
 [[keys.command]]
-key = "prefix+shift+a"
-type = "plugin_action"
-command = "annotate.open"
-description = "review documents in this folder"
-
-[[keys.command]]
 key = "prefix+a"
 type = "plugin_action"
+command = "annotate.last-newest"
+description = "review the agent's newest reply"
+
+[[keys.command]]
+key = "prefix+shift+a"
+type = "plugin_action"
 command = "annotate.last"
-description = "review the agent's last reply"
+description = "pick an agent reply to review"
+
+[[keys.command]]
+key = "prefix+ctrl+r"
+type = "plugin_action"
+command = "annotate.review"
+description = "review this repo's changes"
+
+[[keys.command]]
+key = "prefix+t"
+type = "plugin_action"
+command = "annotate.terminal"
+description = "review this pane's recent output"
 
 # Visor
 [[keys.command]]
