@@ -429,6 +429,15 @@ type = "plugin_action"
 command = "annotate.terminal"
 description = "review this pane's recent output"
 
+# tuicr
+[[keys.command]]
+key = "prefix+ctrl+t"
+type = "popup"
+command = "~/.config/herdr/tuicr-popup.sh"
+description = "tuicr: pick changes or commits to review"
+width = "90%"
+height = "90%"
+
 # Visor
 [[keys.command]]
 key = "cmd+shift+g"
