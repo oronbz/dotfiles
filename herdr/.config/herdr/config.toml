@@ -419,11 +419,9 @@ description = "pick an agent reply to review"
 
 [[keys.command]]
 key = "prefix+ctrl+t"
-type = "popup"
-command = "~/.config/herdr/plannotator-pick.sh"
-description = "plannotator: pick changes or a commit to review"
-width = "90%"
-height = "80%"
+type = "plugin_action"
+command = "annotate.review-pick"
+description = "pick changes to review"
 
 [[keys.command]]
 key = "prefix+t"
